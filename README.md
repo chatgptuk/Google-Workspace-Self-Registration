@@ -2,7 +2,7 @@
 ### 前提条件
 
 在开始之前，请确保您已经完成以下步骤：
- **创建 Google Cloud 项目并启用 Admin SDK**：
+ **用Google Workspace管理员账号创建 Google Cloud 项目并启用 Admin SDK**：
    - 转到 [Google Cloud Console](https://console.cloud.google.com/)。
    - 创建一个新项目或使用现有项目。
    - 启用 **Admin SDK** API。
