@@ -1,5 +1,12 @@
 # Google-Workspace-Self-Registration
+### 前提条件
 
+在开始之前，请确保您已经完成以下步骤：
+ **创建 Google Cloud 项目并启用 Admin SDK**：
+   - 转到 [Google Cloud Console](https://console.cloud.google.com/)。
+   - 创建一个新项目或使用现有项目。
+   - 启用 **Admin SDK** API。
+  
 #### 步骤 1：确认 OAuth 客户端的配置
 
 1. **访问 Google Cloud Console**：
@@ -36,7 +43,7 @@
 
 3. **选择正确的作用域**：
    - 在 **"Step 1: Select & authorize APIs"** 部分，展开 **"Admin SDK"**。
-   - 勾选 **"https://www.googleapis.com/auth/admin.directory.user"**。
+   - 勾选 "https://www.googleapis.com/auth/admin.directory.user"。
    - 点击 **"Authorize APIs"**。
 
 4. **完成授权流程**：
@@ -47,18 +54,4 @@
    - 在 **"Step 2"**，点击 **"Exchange authorization code for tokens"**。
    - **Refresh Token** 会显示在下方，复制并安全存储。
 
-#### 步骤 3：确保域范围委托（可选但推荐）
-
-对于管理 Google Workspace 用户，通常需要 **域范围委托（Domain-Wide Delegation）**。这需要在服务账户中进行设置，但由于服务账户密钥创建被禁用，您需要确保您的 OAuth 客户端有足够的权限。
-
-1. **启用域范围委托**：
-   - 在 **OAuth 2.0 Client ID** 的编辑页面，确保 **"Enable G Suite Domain-wide Delegation"** 已选中（如果可用）。
-   - 输入一个 **Product name for the consent screen**（例如：“Workspace Registration App”）。
-   - 保存更改。
-
-2. **配置管理员权限**：
-   - 登录到 [Google Workspace 管理控制台](https://admin.google.com/)。
-   - 导航到 **Security > API Controls > Domain-wide Delegation**。
-   - 添加新的客户端，输入您的 **OAuth 客户端 ID** 和所需的 **Scopes**（例如，`https://www.googleapis.com/auth/admin.directory.user`）。
-   - 保存更改。
 
